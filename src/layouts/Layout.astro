@@ -1,0 +1,66 @@
+---
+// import Topheader from "../components/Topheader.astro";
+import "../styles/global.css";
+import Header from "../components/header.astro";
+import Banner from "../components/banner.astro";
+import Subheader from "../components/subheader.astro";
+// import Content from "../components/content.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <Header />
+    <!-- <Banner
+      backgroundUrl="/src/assets/production_banner.jpg"
+      width="100%"
+      height="42vh"
+      heading="Welcome to My Website"
+      subheading="Discover great content here!"
+    />
+    <Subheader />
+
+    <div
+      class="h2_R"
+      style="padding: 52px 40px 0px 24px; color:hsla(0, 0%, 10%, 0.87); max-width:75%;"
+      id="hrms"
+    >
+      Streamline Your Manufacturing Operations with GoodBooks Production
+      Management Software
+    </div>
+    <div class="underline" id="exp_yellow_line" style="margin-left: 40px;">
+    </div>
+    <br>
+    <br> -->
+
+    <!-- <Content client:visible /> -->
+
+    <slot />
+  </body>
+</html>
+<style is:global>
+  .h2_R {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  #exp_yellow_line {
+    margin-top: 8px !important;
+    margin-left: 27px !important;
+  }
+
+  .underline {
+    content: "";
+    height: 3px;
+    width: 60px;
+    background: #f2cb22;
+    margin-left: 40px;
+    bottom: -8px;
+  }
+</style>

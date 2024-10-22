@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+
+.header-bg {
+    @apply bg-white text-black;
+}
+
+.header-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.header-flex {
+    @apply flex justify-between items-center py-4 h-[76px];
+}
+
+.header-logo {
+    @apply  hidden md:flex items-center;
+}
+
+.header-nav {
+    @apply hidden md:flex space-x-6;
+}
+
+.header-nav-item {
+    @apply flex items-center text-gray-700 hover:text-gray-900 text-base;
+}
+
+.header-trial-button {
+    @apply text-white font-bold text-base py-[10px] px-[10px] rounded border border-transparent bg-[#E98118] transition duration-300 hover:bg-transparent hover:border-gray-800 hover:text-gray-800 cursor-pointer max-w-max;
+}
+
+.header-login {
+    @apply text-gray-700 text-base hover:text-customPurple hover:underline font-montserrat font-normal leading-[150%];
+}
+
+.mobile-menu-button {
+    @apply md:hidden text-gray-700;
+}
+
+.mobile-nav {
+    @apply md:hidden flex flex-col space-y-4;
+}
+
+.mobile-nav-item {
+    @apply flex items-center text-gray-700 hover:text-gray-900 text-base;
+}
+
+.mobile-trial-button {
+    @apply text-white font-bold text-base py-[10px] px-[10px] rounded border border-transparent bg-[#E98118] transition duration-300 hover:bg-transparent hover:border-gray-800 hover:text-gray-800 cursor-pointer max-w-max;
+}
+
+
+

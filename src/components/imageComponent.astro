@@ -1,0 +1,22 @@
+---
+import Image from "astro/components/Image.astro";
+
+export interface ImageProps {
+    src: string;
+    alt?: string;
+    width?: number;
+    height?: number;
+  }
+  
+  const { src, alt = "", width, height } = Astro.props;
+---
+
+
+  
+  <Image
+    src={src}
+    alt={alt}
+    width={width ? width : "auto"}
+    height={height ? height : "auto"}
+  />
+  

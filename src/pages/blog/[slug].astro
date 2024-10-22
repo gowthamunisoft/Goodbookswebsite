@@ -1,0 +1,28 @@
+---
+import { getBlogPermalink } from './../../utlis/permalink';
+
+// Fetching posts to get dynamic slugs
+export async function getStaticPaths() {
+  const response = await fetch(''); // Fetch posts from API
+  const posts = await response.json(); // Convert the response to JSON
+  return posts.map((post: { slug: any; }) => ({
+    params: { slug: post.slug }, // Map to params with the slug
+  }));
+}
+
+const { slug } = Astro.params;
+const postResponse = await fetch(``);
+const post = await postResponse.json(); // Convert the response to JSON
+const canonicalUrl = getBlogPermalink(slug);
+---
+
+<html>
+  <head>
+    <title>{post.title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+  </head>
+  <body>
+    <h1>{post.title}</h1>
+    <p>{post.content}</p>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+---
+// src/components/Navbar.astro
+import ImageComponent from "../components/imageComponent.astro";
+import logo from "./../assets/logo.png";
+import hamburger from "./../assets/hamburger.png";
+import ctas from "./../assets/ctas.png";
+import { navItems } from './../data/navitems';
+
+---
+
+<header class="header-bg">
+  <div class="header-container">
+    <div class="header-flex items-center justify-between">
+      <div class="header-logo ">
+        <ImageComponent src={logo} alt="" width={156} height={44}/>
+      </div>
+
+      <ul class="header-nav flex items-center space-x-4">
+        <li>
+          <a href="#" class="header-nav-item flex items-center">
+            <i class="fa-solid fa-phone-volume"></i>
+            <span class="ml-2 hover:text-customPurple hover:underline">+91 98432 43624</span>
+          </a>
+        </li>
+        <li class="free-product-trial">
+          <div>
+            <a href="#" class="header-trial-button"> Free Product Trial </a>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="header-login">Log in</a>
+        </li>
+      </ul>
+
+      <div class="mobile-menu-button">
+        <button class="flex items-center space-x-32"> 
+          <ImageComponent src={hamburger} alt="" width={24} height={24} class="relative top-3 left-4" />
+          <ImageComponent src={logo} alt="" width={156} height={44} />
+          <ImageComponent src={ctas} alt="" width={24} height={24} class="relative top-3 left-4" />
+        </button>
+      </div>
+      
+    </div>
+  </div>
+</header>
+<nav class="bg-darkpurple shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center" style="height: 42px;">
+      <div class="hidden md:block">
+        <ul class="flex space-x-8">
+          {navItems.map(item => (
+            <li class="relative group">
+              <a href="#" class="text-white">{item.title}</a>
+              {item.subItems.length > 0 && (
+                <ul class="absolute left-0 mt-2 w-48 bg-black shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-300">
+                  {item.subItems.map(subItem => (
+                    <li>
+                      <a href={subItem.link} class="block px-4 py-2 text-white hover:bg-gray-600">{subItem.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
