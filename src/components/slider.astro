@@ -1,0 +1,176 @@
+---
+import ImageComponent from "./imageComponent.astro";
+import production_client_get from "./../assets/production_client_get.png";
+import production_client_gishnu from "./../assets/production_client_gishnu.png"
+import production_client_messer from "./../assets/production_client_messer.png"
+import production_client_mfg from "./../assets/production_client_mfg.png"
+import production_client_ramesh from "./../assets/production_client_ramesh.png"
+
+---
+
+<div class="client" style="padding-bottom: 284px;">
+  <div
+    class="client h1_B"
+    style="text-align: center; padding: 52px 0px 26px 0px; color:#FFFFFF;"
+    id="company_names"
+  >
+    Trusted by global businesses big and small!
+  </div>
+  <div class="wrapper" style="margin-top: 26px;">
+    <div class="slider">
+      <div class="slide-track">
+        <div class="slide">
+          <ImageComponent
+            src={production_client_get}
+            alt=""
+            width={200}
+            height={92}
+          />
+
+          <!-- <img src="production_client_get.png"
+                        style="max-height:92px; max-width:200px;"> -->
+        </div>
+        <div class="slide">
+
+
+            <ImageComponent
+            src={production_client_get}
+            alt=""
+            width={200}
+            height={92}
+          />
+
+          <!-- <img
+            src="production_client_gishnu.png"
+            style="max-height:92px; max-width:200px;"
+          /> -->
+        </div>
+        <div class="slide">
+
+
+            <ImageComponent
+            src={production_client_messer}
+            alt=""
+            width={200}
+            height={92}
+          />
+          <!-- <img
+            src="production_client_messer.png"
+            style="max-height:92px; max-width:200px;"
+          /> -->
+        </div>
+        <div class="slide">
+            <ImageComponent
+            src={production_client_mfg}
+            alt=""
+            width={200}
+            height={92}
+          />
+
+
+          <!-- <img
+            src="production_client_mfg.png"
+            style="max-height:92px; max-width:200px;"
+          /> -->
+        </div>
+        <div class="slide">
+
+            <ImageComponent
+            src={production_client_ramesh}
+            alt=""
+            width={200}
+            height={92}
+          />
+
+          <!-- <img
+            src="production_client_ramesh.png"
+            style="max-height:92px; max-width:200px;"
+          /> -->
+        </div>
+        <div class="slide">
+          <img
+            src="production_client_harsha.png"
+            style="max-height:92px; max-width:200px;"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="production_client_woodbriar.png"
+            style="max-height:92px; max-width:200px;"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="production_client_siruvani.png"
+            style="max-height:92px; max-width:200px;"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="production_client_suncoat.png"
+            style="max-height:92px; max-width:200px;"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="production_client_textech.png"
+            style="max-height:92px; max-width:200px;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.wrapper {
+  @apply flex items-center justify-center h-[92px];
+}
+
+.slider {
+  @apply h-[92px] m-auto overflow-hidden relative w-full;
+}
+
+.slider .slide-track {
+  @apply flex;
+  width: calc(250px * 14);
+  -webkit-animation: scroll 30s linear infinite;
+  animation: scroll 30s linear infinite;
+}
+
+.slider .slide {
+  @apply h-[92px] w-[292px];
+}
+
+.slider .slide img {
+  @apply w-full h-[92px];
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    @apply translate-x-0;
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    @apply translate-x-0;
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}
+
+.client {
+  @apply bg-[#383838];
+}
+
+#company_names {
+  @apply w-full;
+  /* margin-left: 115px; */
+}
+
+</style>

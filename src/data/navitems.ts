@@ -3,7 +3,7 @@ export const navItems = [
     {
       title: 'Products',
       subItems: [
-        { name: 'ERP', link: 'erp.html' },
+        { name: 'ERP', link: 'Content' },
         { name: 'Production', link: 'production.html' },
         { name: 'Inventory', link: 'inventory.html' },
         { name: 'Purchase', link: 'purchase.html' },

@@ -4,19 +4,19 @@ import Image from "astro/components/Image.astro";
 export interface ImageProps {
     src: string;
     alt?: string;
-    width?: number;
-    height?: number;
-  }
-  
-  const { src, alt = "", width, height } = Astro.props;
+    width?: any;
+    height?: any;
+    loading?: "lazy" | "eager";
+    class?: string; 
+}
+
+const { src, alt = "", width, height, loading = "lazy", class: className } = Astro.props; 
 ---
-
-
-  
-  <Image
+<Image
     src={src}
     alt={alt}
-    width={width ? width : "auto"}
-    height={height ? height : "auto"}
-  />
-  
+    width={width ? width : undefined} 
+    height={height ? height : undefined} 
+    loading={loading}
+    class={className}
+/>

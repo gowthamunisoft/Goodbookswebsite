@@ -1,4 +1,241 @@
 ---
-import ImageComponent from "./imageComponent.astro";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 ---
+<div style="display:flex; flex-wrap: wrap; justify-content: center; padding-top:390px;border:solid red">
+    <table id="demo_line" style="padding: 0 30px 0 30px; border-right: 1px solid rgba(26, 26, 26, 0.32);">
+        <tr>
+            <td><img class="demo_icon" src="./../assets/demo_icon.png"></td>
+        </tr>
+        <tr>
+            <td class="h3_B" style="padding-bottom: 2px; color:hsla(0, 0%, 10%, 0.87)">Request a demo
+            </td>
+        </tr>
+        <tr>
+            <td class="h6_R" style="padding-top: 2px; max-width:272px; color:hsla(0, 0%, 10%, 0.50);">
+                Schedule
+                your live demo, our expert will contact soon.</td>
+        </tr>
+        <tr>
+            <td style="padding-top: 24px;">
+                <a href="#" class="h6_R trial_inverse" style="text-decoration:none;">Try Demo</a>
+            </td>
+        </tr>
+    </table>
 
+    <table class="free_trial" style="padding: 0 30px 0 30px; border-right: 1px solid rgba(26, 26, 26, 0.32);">
+    <tr>
+        <td><img class="demo_icon" src="./../assets/demo_icon.png"></td>
+    </tr>
+    <tr>
+        <td class="h3_B" style="padding-bottom: 2px; color:hsla(0, 0%, 10%, 0.87)">Take a free trial
+        </td>
+    </tr>
+    <tr>
+        <td class="h6" style="padding-top: 2px; max-width:272px; color:hsla(0, 0%, 10%, 0.50);">
+            Experience
+            GoodBooks to make your businesses good.</td>
+    </tr>
+    <tr>
+        <td style="padding-top: 24px;">
+            <a href="#" class="h6_R trial_inverse" style="text-decoration:none;">Free Trial</a>
+        </td>
+    </tr>
+</table>
+
+    <table id="cont_sales" style="padding: 0 0px 0 40px;">
+        <tr>
+            <td><img class="demo_icon" src="./../assets/demo_icon.png"></td>
+        </tr>
+        <tr>
+            <td class="h3_B" style="padding-bottom: 2px; color:hsla(0, 0%, 10%, 0.87)">Contact sales
+            </td>
+        </tr>
+        <tr>
+            <td class="h6_R" style="padding-top: 2px; max-width:272px; color:hsla(0, 0%, 10%, 0.50);">We
+                are
+                available Monday-Saturday 9 AM to 6 PM</td>
+        </tr>
+        <tr>
+            <td style="padding-top: 24px;">
+                <a href="#" class="h6_R trial_inverse" style="text-decoration:none;">Try Demo</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<div
+  id="service_enq_cont"
+  style="display: flex; flex-wrap:wrap; align-items: center; padding: 80px 40px 0 40px;"
+>
+  <span class="h2_R" id="service_enquiry" style="color:hsla(0, 0%, 10%, 0.87);"
+    >For Enquiry or Service support, call</span
+  >
+  <span style="padding: 5px 24px;">
+    <a href="#" style="text-decoration:none;" class="h6_R trial" id="phone_no_1"
+      >+91 98432 43624</a
+    >
+  </span>
+</div>
+<div
+  class="underline"
+  style="margin-bottom:60px;margin-top: 7px;"
+  id="enq_line"
+>
+</div>
+
+<span id="phone_no_2" style="padding-left:24px;display: none;">
+  <a href="#" style="text-decoration:none;" class="h6_R trial"
+    >+91 98432 43624</a
+  >
+</span>
+
+<div
+  style="display: flex; flex-wrap:wrap; justify-content: center; padding-bottom:40px 0 40px 0;"
+  class="social_media_logos"
+>
+  <a href="https://goodbookserp.com/" target="blank"
+    ><i class="fa-brands fa-facebook-f social_media" style="margin-right:20px;"
+    ></i></a
+  >
+  <a href="https://goodbookserp.com/" target="blank"
+    ><i class="fa-brands fa-youtube social_media" style="margin:0 20px;"></i></a
+  >
+  <a href="https://goodbookserp.com/" target="blank"
+    ><i class="fa-brands fa-x-twitter social_media" style="margin:0 20px;"
+    ></i></a
+  >
+  <a href="https://goodbookserp.com/" target="blank"
+    ><i class="fa-brands fa-linkedin-in social_media" style="margin:0 20px;"
+    ></i></a
+  >
+  <a href="https://goodbookserp.com/" target="blank"
+    ><i class="fa-brands fa-instagram social_media" style="margin-left:20px;"
+    ></i></a
+  >
+</div>
+
+<div class="footer-container" id="site_footer">
+  <div class="link-container">
+    <a href="#" class="footer_menu h6_R">Contact us</a>
+    <a href="#" class="footer_menu h6_R">Terms of use</a>
+    <a href="#" class="footer_menu h6_R">Privacy policy</a>
+    <a href="#" class="footer_menu h6_R">Site map</a>
+  </div>
+
+  <div class="company-container">
+    <span class="company-title h5_B">Company</span>
+    <a href="#" class="footer_menu h6_R">Careers</a>
+    <a href="#" class="footer_menu h6_R">About GoodBooks</a>
+    <a href="#" class="footer_menu h6_R">What's New</a>
+  </div>
+</div>
+
+<div class="mobfooter block flex-wrap justify-center md:hidden" id="mob_footer">
+  <div
+    id="mob_footer_1"
+    class="grid flex-wrap justify-start -mt-[12] mx-[12] mb-3"
+  >
+    <a href="#" class="footer_menus h6_R px-8 mb-6">Contact us</a>
+    <a href="#" class="footer_menus h6_R px-8 mb-6">Terms of use</a>
+    <a href="#" class="footer_menus h6_R px-8 mb-6">Privacy policy</a>
+    <a href="#" class="footer_menus h6_R px-8">Site map</a>
+  </div>
+  <div
+    id="mob_footer_2"
+    class="grid flex-wrap justify-end -mt-44 mx-6 w-11/12 mb-7"
+  >
+    <span class="h5_B text-white px-8 mb-6">Company</span>
+    <a href="#" class="footer_menus h6_R px-8 mb-6">Careers</a>
+    <a href="#" class="footer_menus h6_R px-8 mb-6">About GoodBooks</a>
+    <a href="#" class="footer_menus h6_R px-8">What's New</a>
+  </div>
+</div>
+
+<div class="Copyright">
+  <div class="flex flex-wrap items-center justify-center">
+    <p class="font-bold text-[16px]">&copy;</p>
+    <span class="content_R ml-2"
+      >2024 GoodBooks Technologies Private Limited</span
+    >
+  </div>
+</div>
+<style>
+  .Copyright {
+    @apply flex flex-wrap justify-center bg-[hsla(265,52%,9%,1)] text-[hsla(0,0%,100%,0.5)] py-4;
+  }
+  .content_R {
+    @apply font-montserrat text-[12px] not-italic font-normal leading-[150%];
+  }
+
+  .footer-container {
+    @apply hidden md:flex flex-wrap justify-center  border-red-500 mt-8 mb-4 w-full h-max;
+    background-image: url("./../assets/footer.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .footer_menu {
+    @apply text-white px-8 border-r border-white/50;
+  }
+
+  .footer_menu:hover {
+    @apply underline transition duration-500;
+  }
+
+  .footer_menus {
+    @apply text-white px-8;
+  }
+
+  .footer_menus:hover {
+    @apply underline transition duration-500;
+  }
+  .company-title {
+    @apply text-white px-8 border-r border-white/50;
+  }
+
+  .company-container {
+    @apply flex flex-wrap justify-center my-7 w-11/12;
+  }
+
+  .link-container {
+    @apply flex flex-wrap justify-center my-7 w-11/12;
+  }
+  #mob_footer {
+    /* display: block !important;
+    @a */
+    background: url("./../assets/footer_mob.png") !important;
+    background-color: #1e1032;
+    background-size: cover !important;
+    background-position: center !important;
+    padding-top: 80px;
+    padding-bottom: 1px;
+  }
+
+  .social_media:hover {
+    color: #ffffff;
+    background-color: hsla(0, 0%, 10%, 0.87);
+    border-radius: 8px;
+    padding: 10px;
+    transition: 0.3s;
+  }
+  .social_media {
+    color: hsla(0, 0%, 10%, 0.87);
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .trial {
+    width: max-content;
+    font-weight: 700;
+    padding: 10px;
+    text-align: center;
+    border: 1.5px solid hsla(0, 0%, 100%, 0);
+    border-radius: 4px;
+    background-color: #e98118;
+    color: #ffffff !important;
+    cursor: pointer;
+    margin-left: -3px;
+  }
+</style>

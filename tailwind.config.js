@@ -13,6 +13,14 @@ module.exports = {
         darkpurple:'#1E1032',
         cream: '#F3EDE2'
       },
+      fontSize: {
+        '34': '34px',
+        '30': '30px',
+        '24': '24px',
+        '20': '20px',
+        '18': '18px',
+        '16': '16px',
+    },
     },
   },
   plugins: [],
