@@ -1,0 +1,20 @@
+---
+// src/pages/posts.astro
+const response = await fetch('http://localhost:3000/api/posts');
+const posts = await response.json();
+---
+
+<html>
+  <head>
+    <title>Posts</title>
+  </head>
+  <body>
+    <h1>All Posts</h1>
+    <ul>
+      {posts.docs.map((post: { title: unknown; }) => (
+        <li>{post.title}</li>  // Display each post's title
+      ))}
+    </ul>
+  </body>
+</html>
+
