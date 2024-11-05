@@ -1,41 +1,64 @@
-<!-- ---
-// import { Icon } from 'astro-icon/components';
-// import{Icon} from 'astro'
-import { twMerge } from 'tailwind-merge';
-import type { CallToAction as Props } from '~/types';
+---
+interface Props {
+  text: string;
+  width?: string; // e.g., '100px' or '100%'
+  height?: string; // e.g., '40px'
+  margin?: string; // e.g., '10px'
+  radius?: string; // e.g., '5px'
+  bgColor?: string; // e.g., '#007bff'
+  textColor?: string; // e.g., '#fff'
+  border?: string; // e.g., '1px solid #007bff'
+  disabled?: boolean;
+  onClick?: (event: MouseEvent) => string | null | undefined; // Function to handle click
+}
 
 const {
-  variant = 'secondary',
-  target,
-  text = Astro.slots.render('default'),
-  icon = '',
-  class: className = '',
-  type,
-  ...rest
-} = Astro.props;
+  text,
+  width = 'auto',
+  height = 'auto',
+  margin = '0',
+  radius = '5px',
+  bgColor = '#007bff',
+  textColor = '#fff',
+  border = 'none',
+  disabled = false,
+  onClick,
+} = Astro.props as Props;
 
-const variants = {
-  primary: 'btn-primary',
-  secondary: 'btn-secondary',
-  tertiary: 'btn btn-tertiary',
-  link: 'cursor-pointer hover:text-primary',
+const handleClick = (event: MouseEvent) => {
+  console.log("onclicking", event); // Log the event
+  if (onClick) {
+    onClick(event); // Pass the event to the onClick handler
+  }
 };
 ---
 
-{
-  type === 'button' || type === 'submit' || type === 'reset' ? (
-    <button type={type} class={twMerge(variants[variant] || '', className)} {...rest}>
-      <Fragment set:html={text} />
-      {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" />}
-    </button>
-  ) : (
-    <a
-      class={twMerge(variants[variant] || '', className)}
-      {...(target ? { target: target, rel: 'noopener noreferrer' } : {})}
-      {...rest}
-    >
-      <Fragment set:html={text} />
-      {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" />}
-    </a>
-  )
-} -->
+<button
+  style={{
+    width,
+    height,
+    margin,
+    borderRadius: radius,
+    backgroundColor: bgColor,
+    color: textColor,
+    border,
+  }}
+  disabled={disabled}
+  onclick()={handleClick} 
+>
+  {text}
+</button>
+
+<style>
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+</style>

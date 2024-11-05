@@ -2,6 +2,15 @@
 // src/pages/posts.astro
 const response = await fetch('http://localhost:3000/api/posts');
 const posts = await response.json();
+
+const baseUrl = 'http://localhost:3000'; // Set to your Payload CMS server's URL
+const posturl = `${baseUrl}/api/posts/2?locale=en&draft=false&depth=1`;
+let post =null
+const res = await fetch(posturl);
+if(res.ok){
+  post = await res.json();
+  console.log("post in pagges",post)
+}
 ---
 
 <html>
@@ -15,6 +24,10 @@ const posts = await response.json();
         <li>{post.title}</li>  // Display each post's title
       ))}
     </ul>
+
+    <h1>{post.title}</h1>
+    <h3></h3>
+
   </body>
 </html>
 

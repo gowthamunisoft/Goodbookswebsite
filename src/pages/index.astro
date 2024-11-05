@@ -1,34 +1,61 @@
 ---
-import Layout from '../layouts/Layout.astro';
+function handleClick(event: MouseEvent): void {
+  console.log("Button clicked!", event); // Log the click event
+  window.location.href = "/posts";
+}
 
-const baseUrl = 'http://localhost:3000'; // Set to your Payload CMS server's URL
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/ui/button.astro";
+const baseUrl = "http://localhost:3000"; // Set to your Payload CMS server's URL
 const url = `${baseUrl}/api/posts/3?locale=en&draft=false&depth=1`; // Fetch a specific post by ID
+const posturl = `${baseUrl}/api/posts/?locale=en&draft=false&depth=1`;
 const res = await fetch(url);
+const data = await fetch(posturl);
+console.log("datas===>", data);
 let post = null; // Default state for a single post
 
 if (res.ok) {
   post = await res.json(); // Directly assign the response data
-  console.log('API Response:', post); // Log the entire API response for inspection
+  console.log("API Response:", post); // Log the entire API response for inspection
 } else {
-  console.error('Error fetching post:', res.status, await res.text());
+  console.error("Error fetching post:", res.status, await res.text());
 }
 ---
 
 <Layout title={post ? post.title : "Post Not Found"}>
+  <!-- <Button
+    text="navigation"
+    width="200px"
+    height="50px"
+    margin="10px"
+    radius="10px"
+    bgColor="#28a745"
+    textColor="#fff"
+    border="2px solid #28a745"
+    onClick={handleClick}
+  />
   <h1>Astro + PayloadCMS 🚀</h1>
-  {post ? (
-    <article>
-      <h2>{post.title}</h2>
-      <p>{post.content}</p>
-      <p><strong>Slug:</strong> {post.slug}</p>
-      <p><strong>Updated At:</strong> {new Date(post.updatedAt).toLocaleString()}</p>
-      <p><strong>Created At:</strong> {new Date(post.createdAt).toLocaleString()}</p>
-    </article>
-  ) : (
-    <p>No post available</p>
-  )}
-</Layout>
+  <h1>{post}</h1>
 
-<style>
-  /* Add styles here */
-</style>
+  {
+    post ? (
+      <article>
+        <h2>{post.title}</h2>
+        <p>{post.content}</p>
+        <p>
+          <strong>Slug:</strong> {post.slug}
+        </p>
+        <p>
+          <strong>Updated At:</strong>{" "}
+          {new Date(post.updatedAt).toLocaleString()}
+        </p>
+        <p>
+          <strong>Created At:</strong>{" "}
+          {new Date(post.createdAt).toLocaleString()}
+        </p>
+      </article>
+    ) : (
+      <p>No post available</p>
+    )
+  } -->
+</Layout>
